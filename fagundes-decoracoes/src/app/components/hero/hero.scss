@@ -1,0 +1,190 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.shader-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.hero-animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(135deg, #0f0f0f 0%, var(--color-primary-yellow) 30%, var(--color-primary-red) 70%, #0f0f0f 100%);
+  background-size: 300% 300%;
+  animation: hero-gradient-shift 4s ease infinite;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.7);
+  z-index: 1;
+}
+
+
+
+@keyframes hero-gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.hero-video-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  /* Alinha o vídeo à direita do seu espaço */
+  align-items: center;
+
+  .inline-video {
+    width: 100%;
+    max-width: 950px;
+    /* Maior ainda */
+    height: auto;
+    display: block;
+    opacity: 0.70;
+    /* Mais opaco, quase original */
+    transform: scale(1.25) translateX(8%);
+    /* Aumenta 25% e empurra pra fora/direita */
+  }
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 55%;
+  /* Devolvido o espaço original para o texto não quebrar */
+  min-width: 500px;
+  /* Garante que o texto não seja espremido */
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  color: var(--text-light);
+
+  .block {
+    display: block;
+  }
+
+  .text-white {
+    color: #fff;
+  }
+
+  .tracking-wider {
+    letter-spacing: 0.05em;
+  }
+
+  .font-black {
+    font-weight: 900;
+  }
+
+  .drop-shadow-2xl {
+    filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.15));
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  color: var(--text-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-layout {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-content {
+    display: contents;
+    /* Allows reordering of internal items with external video */
+  }
+
+  .hero-title {
+    order: 1;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    order: 2;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .hero-video-wrapper {
+    order: 3;
+    max-width: 100%;
+    justify-content: center;
+
+    .inline-video {
+      transform: none;
+      max-width: 100%;
+    }
+  }
+
+  .hero-actions {
+    order: 4;
+    flex-direction: column;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
+}

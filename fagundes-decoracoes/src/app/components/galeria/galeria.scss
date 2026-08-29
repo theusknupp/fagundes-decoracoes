@@ -1,0 +1,107 @@
+.galeria {
+  background: var(--bg-dark);
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 250px;
+  gap: 20px;
+}
+
+.galeria-item {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  /* opacity: 0; */
+  background-size: cover;
+  background-position: center;
+  background-color: #ddd;
+  
+  &.item-1 {
+    grid-column: span 2;
+    grid-row: span 1;
+    background-image: url('/galeria/Hospital.png');
+  }
+  &.item-2 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/RedeGlobo.png');
+  }
+  &.item-3 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/Shopping.png');
+  }
+  &.item-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/Shopping2.png');
+  }
+  &.item-5 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/UFViçosa.png');
+  }
+  &.item-6 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/Hospital2.png');
+  }
+  &.item-7 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/Casa.png');
+  }
+  &.item-8 {
+    grid-column: span 1;
+    grid-row: span 1;
+    background-image: url('/galeria/Galeria.png');
+  }
+  
+  &:hover {
+    .item-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.item-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  
+  h4 {
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+  }
+  
+  p {
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .galeria-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+  
+  .galeria-item {
+    &.item-1, &.item-2, &.item-3, &.item-4, &.item-5, &.item-6, &.item-7, &.item-8 {
+      grid-column: span 1;
+      grid-row: span 1;
+    }
+  }
+}

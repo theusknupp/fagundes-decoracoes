@@ -1,0 +1,67 @@
+.galeria-animacao-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--bg-dark);
+}
+
+.animacao-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.text-overlay-container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.text-overlay {
+  max-width: 650px;
+  text-align: left;
+  
+  .title-section {
+    font-size: 3.5rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-align: left;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+  }
+}
+
+@media (max-width: 768px) {
+  .text-overlay {
+    .title-section {
+      font-size: 2.2rem;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+    }
+  }
+}

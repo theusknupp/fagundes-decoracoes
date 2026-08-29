@@ -1,0 +1,44 @@
+<section id="avaliacoes" class="avaliacoes">
+  <div class="container">
+    <div class="header-avaliacoes">
+      <h2 class="title-section">O que nossos clientes dizem</h2>
+      <div class="google-badge">
+        <span class="badge-text">Excelente</span>
+        <div class="stars">
+          <svg viewBox="0 0 24 24" width="20" height="20" *ngFor="let i of [1,2,3,4,5]">
+            <path fill="#fbbc05"
+              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        </div>
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg"
+          alt="Google Logo" class="google-logo">
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card" *ngFor="let review of reviews">
+        <div class="review-header">
+          <img [src]="review.photoUrl" [alt]="review.author" class="review-avatar">
+          <div class="review-meta">
+            <h4 class="review-author">{{ review.author }}</h4>
+            <span class="review-date">{{ review.date }}</span>
+          </div>
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg" alt="Google"
+            class="review-google-icon">
+        </div>
+        <div class="review-stars">
+          <svg viewBox="0 0 24 24" width="16" height="16" *ngFor="let i of [1,2,3,4,5]">
+            <path fill="#fbbc05"
+              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+        </div>
+        <p class="review-text">{{ review.text }}</p>
+      </div>
+    </div>
+
+    <div class="avaliacoes-action">
+      <a href="https://www.google.com/search?q=fagundes+decora%C3%A7%C3%B5es" target="_blank" rel="noopener"
+        class="btn btn-primary">Ver todas as avaliações no Google</a>
+    </div>
+  </div>
+</section>

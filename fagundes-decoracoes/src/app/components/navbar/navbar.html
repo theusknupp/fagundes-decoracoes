@@ -1,0 +1,26 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container navbar-container">
+    <div class="logo">
+      <span class="logo-icon"></span>
+      <span class="logo-text" [class.dark]="!isHeroVisible">Fagundes</span>
+    </div>
+    
+    <div class="menu-icon" (click)="toggleMenu()">
+      <div class="bar" [class.active]="isMenuOpen"></div>
+      <div class="bar" [class.active]="isMenuOpen"></div>
+      <div class="bar" [class.active]="isMenuOpen"></div>
+    </div>
+    
+    <ul class="nav-links" [class.open]="isMenuOpen">
+      <li><a href="#home" (click)="toggleMenu()">Início</a></li>
+      <li><a href="#sobre" (click)="toggleMenu()">Sobre</a></li>
+      <li><a href="#servicos" (click)="toggleMenu()">Serviços</a></li>
+      <li><a href="#metodologia" (click)="toggleMenu()">Metodologia</a></li>
+      <li><a href="#galeria" (click)="toggleMenu()">Galeria</a></li>
+    </ul>
+    
+    <div class="nav-cta" [class.open]="isMenuOpen">
+      <a href="https://wa.me/553188737519" target="_blank" class="btn btn-primary">Orçamento</a>
+    </div>
+  </div>
+</nav>

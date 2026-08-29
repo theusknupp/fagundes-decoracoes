@@ -1,0 +1,22 @@
+<section id="parceiros" class="parceiros">
+  <div class="container">
+    <h2 class="title-section">Empresas Parceiras</h2>
+    
+    <div class="marquee-container">
+      <div class="marquee-track">
+        <!-- Loop 1 -->
+        <div class="marquee-content">
+          <div class="logo-box" *ngFor="let p of parceiros">
+            <img [src]="'/parceiros/' + p" [alt]="'Parceiro ' + p">
+          </div>
+        </div>
+        <!-- Loop 2 (for infinite scroll) -->
+        <div class="marquee-content">
+          <div class="logo-box" *ngFor="let p of parceiros">
+            <img [src]="'/parceiros/' + p" [alt]="'Parceiro ' + p">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
