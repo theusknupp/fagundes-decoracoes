@@ -5,7 +5,7 @@
       <span class="logo-text" [class.dark]="!isHeroVisible">Fagundes</span>
     </div>
     
-    <div class="menu-icon" (click)="toggleMenu()">
+    <div class="menu-icon" (click)="toggleMenu()" tabindex="0" role="button" aria-label="Abrir menu de navegação">
       <div class="bar" [class.active]="isMenuOpen"></div>
       <div class="bar" [class.active]="isMenuOpen"></div>
       <div class="bar" [class.active]="isMenuOpen"></div>
@@ -20,7 +20,7 @@
     </ul>
     
     <div class="nav-cta" [class.open]="isMenuOpen">
-      <a href="https://wa.me/553188737519" target="_blank" class="btn btn-primary">Orçamento</a>
+      <a href="https://wa.me/553188737519" target="_blank" class="btn btn-primary" aria-label="Solicitar orçamento pelo WhatsApp">Orçamento</a>
     </div>
   </div>
 </nav>

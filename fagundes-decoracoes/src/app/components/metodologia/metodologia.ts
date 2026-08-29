@@ -55,7 +55,7 @@ export class Metodologia implements AfterViewInit {
         // Pop the dot
         tl.fromTo(dot, { scale: 0 }, { scale: 1, duration: 0.4, ease: 'back.out(2)' });
         // Fade in the card from right
-        tl.fromTo(card, { x: 50 }, { x: 0, duration: 0.6, ease: 'power3.out' }, "-=0.2");
+        tl.fromTo(card, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' }, "-=0.2");
       });
 
       ScrollTrigger.refresh();

@@ -35,15 +35,16 @@
         <div class="hero-actions">
           <a href="#servicos" class="btn btn-primary shadow-lg hover:shadow-xl">Conheça nossos serviços</a>
           <a href="https://wa.me/553188737519" target="_blank" class="btn btn-secondary glass"
-            style="filter: url(#glass-effect);">Fale Conosco</a>
+            style="filter: url(#glass-effect);" aria-label="Falar conosco pelo WhatsApp">Fale Conosco</a>
         </div>
       </div>
 
       <!-- Coluna da Direita: Vídeo -->
       <div class="hero-video-wrapper">
-        <video #heroVideo autoplay loop muted playsinline class="inline-video">
+        <video #heroVideo autoplay loop muted playsinline class="inline-video desktop-video" fetchpriority="high">
           <source src="/chroma-keyed-video-muted.webm" type="video/webm">
         </video>
+        <img src="/hero-anim.webp" alt="Animação 3D de ferramentas" class="inline-video mobile-video" fetchpriority="high">
       </div>
     </div>
   </div>

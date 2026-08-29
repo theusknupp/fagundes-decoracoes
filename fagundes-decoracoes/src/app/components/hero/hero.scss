@@ -82,6 +82,10 @@
     transform: scale(1.25) translateX(8%);
     /* Aumenta 25% e empurra pra fora/direita */
   }
+
+  .mobile-video {
+    display: none;
+  }
 }
 
 .hero-content {
@@ -175,6 +179,14 @@
     .inline-video {
       transform: none;
       max-width: 100%;
+    }
+
+    .desktop-video {
+      display: none !important;
+    }
+
+    .mobile-video {
+      display: block !important;
     }
   }
 
